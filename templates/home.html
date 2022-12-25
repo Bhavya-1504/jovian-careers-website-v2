@@ -9,17 +9,27 @@
       #banner{
         height: 360px;
         width: 100%; 
+        object-fit: cover;
+        margin-bottom: 16px;
       }
     </style>
   </head>
   <body>
+    {% include 'nav.html' %}
     <div class = "container">
     <h1 class="text-center mt -2 mb-4"> {{company_name}} Careers</h1>
+    <div class = "row">
     <img class = "img-fluid" id = "banner" src = "https://cautious-garbanzo.bhavya-1504.repl.co/static/banner.jpeg">
     <h2 class="text-center mt-2 mb-4"> About Jovian </h2>
+      <div class = "col-md-6">
     <p class = "lead">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec placerat nisl eu cursus consequat. Donec ullamcorper venenatis tellus, sit amet finibus nisi pellentesque eu. Phasellus maximus elit a sollicitudin imperdiet. Morbi interdum imperdiet sem eu tincidunt. Sed vulputate, tortor nec ultrices aliquet, nibh ipsum lacinia ipsum, at volutpat elit urna vitae ligula. Ut volutpat nec leo vitae commodo. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nisl purus, placerat non leo a, auctor congue nisi.
     </p>
+      </div>
+      <div class = "d-none d-md-block col-md-6">
+        <img src = "/static/people.jpeg" style = "height: 320px; border-radius: 4px margin-bottom: 16px">
+      </div>
+      </div>
     <h2 class="text-center mt-2 mb-4"> Job Openings </h2>
     <p>
       {% for job in jobs %}
@@ -27,9 +37,9 @@
       {% endfor %}
     </p>
       <div class = "text-center">
-    <button class="btn btn-primary btn-lg">Contact Us</button>
-        <p class = "mt-4">Copyright 2022, Jovian</p>
+    <a href = "mailto:bhavyab1375@gmail.com?subject=Question%20about%20Job%20Openings&body=Hello%2C%20I%20am%20%3Cyour%20name%3E.%0D%0AMy%20question%20%3Center%20question%20here%3E." class="btn btn-primary btn-lg">Contact Us</a>
       </div>
     </div>
+    {% include 'footer.html' %}
   </body>
 </html>
