@@ -11,5 +11,11 @@ def hello_jovian():
 def list_jobs():
   jobs = load_jobs_from_db()
   return jsonify(jobs)
+
+@main.route('/job/<id>')
+def show_job(id):
+  job = load_job_from_db(id)
+  return jsonify(job)
+  
 if __name__ == "__main__":
   main.run(host='0.0.0.0', debug=True)
